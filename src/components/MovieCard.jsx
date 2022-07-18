@@ -7,19 +7,18 @@ const IMG_API = "https://image.tmdb.org/t/p/w1280";
 const defaultImage =
   "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80";
 
+  //? alınacak verileri apı ye bakrak seçtik ve olduğu yerde yakaladık ekxtra props yapmadık çünkü verileri mainde spread etmiştik
 const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
   const { currentUser } = useContext(AuthContext);
   let navigate = useNavigate();
  
+//? Deatay için cardların bulunduğu div eonclick verdik eğer login olunmuşsa MovieDetail sayfasına navigate hook ile gönderdik tabiki id ile birlikte olmamışsa toastnotify yazdık
 
+//? 
   return (
     <div
       className="movie"
-      onClick={
-        () =>
-          currentUser
-            ? navigate("details/" + id)
-            : toastWarnNotify("Please log in to see details")
+      onClick={() =>currentUser ? navigate("details/" + id) : toastWarnNotify("Please log in to see details")
         // : alert("Please log in to see details")
       }
     >
