@@ -10,15 +10,7 @@ const defaultImage =
 const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
   const { currentUser } = useContext(AuthContext);
   let navigate = useNavigate();
-  // const setVoteClass = (vote) => {
-  //   if (vote >= 8) {
-  //     return "green";
-  //   } else if (vote >= 6) {
-  //     return "orange";
-  //   } else {
-  //     return "red";
-  //   }
-  // };
+ 
 
   return (
     <div
