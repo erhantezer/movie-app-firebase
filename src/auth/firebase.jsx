@@ -10,6 +10,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+
 import {
   toastErrorNotify,
   toastSuccessNotify,
