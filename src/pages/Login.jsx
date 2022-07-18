@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+//? firebase auth tan methodları alındı ve login işleminde kullanılacak
 import { forgotPassword, signIn, signUpProvider } from "../auth/firebase";
 
+//? kontrol edilecek event olacak olay 2 tanedir 1. si email 1. si password eventidir
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
+
+  //? Form handlesubmit edilir içindeki değerler (signIn) içine atılır ayrıca forgotPassword methodu form içinde çağrılır  onclick verilir eğer basılırsa çalışır
   const handleSubmit = (e) => {
     e.preventDefault();
     signIn(email, password, navigate);
     console.log(email, password);
   };
 
+  //? Form dışında bir buton konulup onclick verilir navigate ile firebaseteki fonksiyona gönderilir ve google ile giriş sağlar 
   const handleProviderLogin = () => {
     signUpProvider(navigate);
   };
   
+//? pencerenin boyutu 700px den büyükse yanına resim ekledik
   return (
     <div className="d-flex justify-content-center">
 

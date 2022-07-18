@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+//? creatUser fonksiyonu ile yeni bir kullanıcı oluşturmak için firebase ten çağrılmıştır oluşturulduktan sonra currentUser çağrılır
 import { createUser } from "../auth/firebase";
 
+//? isim soyisim email ve password için state oluşturduk
 const Register = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
+
 
   const handleSubmit = (e) => {
     const displayName = `${firstName} ${lastName}`;

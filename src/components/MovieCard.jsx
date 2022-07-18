@@ -12,10 +12,10 @@ const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
   const { currentUser } = useContext(AuthContext);
   let navigate = useNavigate();
  
-//? Deatay için cardların bulunduğu div e onclick verdik eğer login olunmuşsa MovieDetail sayfasına navigate hook ile gönderdik tabiki id ile birlikte olmamışsa toastnotify yazdık
+//? Detay için cardların bulunduğu div e onclick verdik eğer login olunmuşsa MovieDetail sayfasına navigate hook ile gönderdik tabiki id ile birlikte olmamışsa toastnotify yazdık
 
 //?  poster_path true ise img_api +poster_path eklenir ve basılır false ise default resim gelir
-//? Eğer login olmuşsa vote_avarage(oylama) ya göre renklendirsin olmamışsa direkt yazsın
+//? Eğer kullanıcı login olmuşsa vote_avarage(oylama) ya göre renklendirsin olmamışsa direkt yazsın
   return (
     <div
       className="movie"

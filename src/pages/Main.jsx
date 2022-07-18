@@ -60,7 +60,7 @@ const Main = () => {
 
   //? JSX içinde form ögesiyle handlesubmitle verileri aldık setSearchTermle alındı ve searchTerm e aktarıldı handlesubmitte searchTerm karşılaştırılarak gerekli işlem yapıldı
 
-  //? Apı den aldığımız verileri maincard componentinde olşturmak için propsla movies map ile alınarak parçalandı burada spread metoduyla moviecard lara id verileri ile gönderdik
+  //? Apı den aldığımız verileri maincard componentinde olşturmak için propsla movies map ile alınarak parçalandı burada spread metoduyla moviecard lara id verileri ile gönderdikz
   return (
     <>
       <form className="search" onSubmit={handleSubmit}>
