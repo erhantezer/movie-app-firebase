@@ -1,4 +1,9 @@
+
+//? Firebase uygulamsı bir back-end kimlik doğrulama vb. işler için kullanılan bir uygulamadır 
+//? Öncelikle firebase yarn add firebase  indirilir
+//? Aşağıda görüldüğü gibi firebase/app ten doğrulama methodu iport eilir ardından firebase/auth dosyasından işimize yaryacak method lar import edilir
 import { initializeApp } from "firebase/app";
+
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -11,6 +16,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 
+//? Toastnotify importları burada ki hata va olaylarda kullanacağımız için import ettik
 import {
   toastErrorNotify,
   toastSuccessNotify,
@@ -30,10 +36,13 @@ const firebaseConfig = {
   appId: "1:45323005435:web:66eb7fb8b8b2da244cef5e"
 };
 
-// Initialize Firebase
+//? Initialize Firebase(firebase doğrulama)
 const app = initializeApp(firebaseConfig);
-// Initialize Firebase Authentication and get a reference to the service
+//? Doğrulama başlatma ve referans alma işlemi
 const auth = getAuth(app);
+
+
+
 
 export const createUser = async (email, password, displayName, navigate) => {
   try {

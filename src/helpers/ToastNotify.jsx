@@ -3,6 +3,12 @@
 //! Tastify aşağıda görüldüğü bibi import edilip index.js kısmına da import yapılır.
 //! index.js import "react-toastify/dist/ReactToastify.css";
 //! Ayrıca paket olarak yarn add "react-toastify": "^9.0.5", olarak indirilir
+//! App.js kısmına import { ToastContainer } from "react-toastify" eklenip 
+       //<AuthContextProvider>
+       // <AppRouter />
+       // <ToastContainer />
+     // </AuthContextProvider> 
+//! şeklinde örenkteki gibi AppRouter ile birlikte yazılır
 
 import { toast } from "react-toastify";
 
