@@ -8,6 +8,11 @@ const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
   // const currentUser = { displayName: "felix franko" };
   // const currentUser = false;
+
+
+  //? 1- React Movie App yazısına link vererek ana sayfaya yönlendirdik
+  //? 2- currentUser varsa daha doğrusu kayıt veye login varsa displayName yazdır yoksa login butonu olsun diye ternary if kullandık çünkü jsx içindeyiz
+  //? 3- currentUser doğruysa aynı zamanda firebase ten gelen logOut fonksiyonu çalışsın yaptık buton içinde kayıt yada login yoksa register butonu gözüksün dedik
   return (
     <div>
       <nav className="navbar navbar-expand-lg">
