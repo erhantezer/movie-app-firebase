@@ -40,7 +40,7 @@ const Main = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     //? arama true ise  ve currentUser (login olduysak) apiden verileri getir
     if (searchTerm && currentUser) {
       getMovies(SEARCH_API + searchTerm);
@@ -64,6 +64,7 @@ const Main = () => {
   //? Apı den aldığımız verileri maincard componentinde olşturmak için propsla movies map ile alınarak parçalandı burada spread metoduyla moviecard lara id verileri ile gönderdikz
   return (
     <>
+
       <form className="search" onSubmit={handleSubmit}>
         <input
           type="search"
@@ -80,6 +81,7 @@ const Main = () => {
           <MovieCard key={movie.id} {...movie} />
         ))}
       </div>
+      
     </>
   );
 };
