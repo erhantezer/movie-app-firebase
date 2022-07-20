@@ -40,6 +40,7 @@ const Main = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     //? arama true ise  ve currentUser (login olduysak) apiden verileri getir
     if (searchTerm && currentUser) {
       getMovies(SEARCH_API + searchTerm);
