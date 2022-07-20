@@ -22,7 +22,6 @@ const Register = () => {
 
 
 //? klasik form işlemi yapıldı  inputlara onchange ve buton olarak kullanmak için form içinde input tanımlandı form a onsubmit verilerek bütün değerler alındı
-//? 
   return (
     <div className="d-flex justify-content-center">
 
