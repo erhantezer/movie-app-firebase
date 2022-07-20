@@ -13,7 +13,6 @@ const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
   let navigate = useNavigate();
  
 //? Detay için cardların bulunduğu div e onclick verdik eğer login olunmuşsa MovieDetail sayfasına navigate hook ile gönderdik tabiki id ile birlikte olmamışsa toastnotify yazdık
-
 //?  poster_path true ise img_api +poster_path eklenir ve basılır false ise default resim gelir
 //? Eğer kullanıcı login olmuşsa vote_avarage(oylama) ya göre renklendirsin olmamışsa direkt yazsın
   return (
