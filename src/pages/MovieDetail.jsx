@@ -3,12 +3,15 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import VideoSection from "../components/VideoSection";
 
+
+//? id ile ve navigate yardımıyla movieCard tan moviedetail bağlantı yaptık herbir sayfanın detayı için id yardımıyla girmek için burada useParams kullandık id yi burada yakaladık
 const MovieDetail = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState();
   const [videoKey, setVideoKey] = useState();
 
   // const API_KEY = process.env.REACT_APP_TMDB_KEY;
+//? Apı sitesinden apı aldık ve  apı kullancağımız id ile kullanacağımız url leri yazdık 
   const API_KEY = "a9a90e58da935e5528540782b69aa0cf";
   const movieDetailBaseUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
   const videoUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`;
@@ -16,6 +19,7 @@ const MovieDetail = () => {
   const defaultImage =
     "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80";
 
+    //? moviedetail ve vide apı si useeffect içerisinde axios ile alındı componentUpdated yapıldı
   useEffect(() => {
     axios
       .get(movieDetailBaseUrl)
@@ -26,6 +30,8 @@ const MovieDetail = () => {
       .then((res) => setVideoKey(res.data.results[0].key))
       .catch((err) => console.log(err));
   }, [movieDetailBaseUrl, videoUrl]);
+
+
 
   return (
     <div className="container py-5">

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+//? creatUser fonksiyonu ile yeni bir kullanıcı oluşturmak için firebase ten çağrılmıştır oluşturulduktan sonra currentUser çağrılır
 import { createUser } from "../auth/firebase";
 
+//? isim soyisim email ve password için state oluşturduk
 const Register = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
@@ -9,6 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
+//? Formda çağrılan handleSubmit fonksiyonu firebase/app uygulama içindeki creatUser metodu içine set edilen yeni değerler atıldı içine navigate te eklenerek  göndermek zorundayız
   const handleSubmit = (e) => {
     const displayName = `${firstName} ${lastName}`;
     e.preventDefault();
@@ -16,6 +19,10 @@ const Register = () => {
 
     console.log(firstName, lastName);
   };
+
+
+//? klasik form işlemi yapıldı  inputlara onchange ve buton olarak kullanmak için form içinde input tanımlandı form a onsubmit verilerek bütün değerler alındı
+//? 
   return (
     <div className="d-flex justify-content-center">
 
